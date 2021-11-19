@@ -1,0 +1,223 @@
+
+
+/* <editor-fold desc=".hlist"> */
+
+.hlist {
+    border: 1px solid black;
+    width: 200px;
+    height: 240px;
+    display: flex;
+    flex-flow: column;
+}
+
+.hlist > .listheader {
+    font-family: "Bahnschrift", sans-serif;
+    text-align: left;
+    text-decoration: underline black;
+    font-size: 24px;
+    margin-top: 8px;
+    margin-left: 3px;
+    max-width: 100%;
+}
+
+.hlist > .list {
+    display: flex;
+    height: 100%;
+    flex-flow: row;
+    max-width: 100%;
+    max-height: 100%;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.hlist > .list > div {
+    width: 100%;
+    font-family: sans-serif;
+}
+
+/* </editor-fold> */
+
+svg {
+    width: 100%;
+    height: auto;
+    fill: black;
+}
+
+
+
+#about {
+    width: 400px;
+    margin-right: 10px;
+    height: fit-content;
+}
+
+#content {
+    padding-top: 10px;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+    #about {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    #content {
+        flex-wrap: wrap;
+    }
+}
+
+/* <editor-fold desc=".inline-wrap"> */
+
+.inline-wrap {
+    display: inline-flex;
+}
+.inline-wrap > * + * {
+    padding-left: 5px;
+}
+.inline-wrap > .icon {
+    width: 24px;
+}
+.inline-wrap > .text {
+    height: 100%;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+/* </editor-fold> */
+
+.filter-view {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    border: 1px solid black;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.filter-view > .filters {
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.filter-view > .filters > .filter {
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    border: 1px solid inherit;
+    color: black;
+    user-select: none;
+    font-family: sans-serif;
+    transition: background-color 0.125s linear;
+    cursor: pointer;
+}
+.filter-view > .filters > .filter:hover {
+    background-color: rgba(178, 206, 224, 0.49);
+}
+.filter-view > .filters > .filter[selected] {
+    background-color: #B2CEE0;
+}
+.filter-view > .filters > .filter + .filter {
+    margin-left: 5px;
+}
+.filter-view > .view {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    place-content: center;
+    justify-content: space-evenly;
+}
+.filter-view > .view > .entry {
+    width: auto;
+    height: auto;
+    max-width: 30%;
+    max-height: 100%;
+    margin: 2.5px;
+    padding: 2.5px;
+    cursor: pointer;
+    display: flex;
+}
+.entry img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+.modal-head {
+    color: #f2f2f2;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    display: inline-flex;
+    font-size: 18px;
+}
+.modal-head > * + * {
+    margin-left: 15px;
+}
+.modal-head > * {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+}
+.modal-head > a {
+    text-decoration: underline;
+}
+.modal-content {
+    background-color: #000000;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.modal-img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    padding-top: 55px;
+    box-sizing: border-box;
+}
+.modal-img > img {
+    max-width: 100%;
+    object-fit: contain;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+.modal > .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+.modal > .close:hover,
+.modal > .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
